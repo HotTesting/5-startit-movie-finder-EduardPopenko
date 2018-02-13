@@ -12,6 +12,7 @@ fdescribe('Movie details', async function () {
       await browser.wait(EC.visibilityOf(movieDetailsHeader), 20000, 'movie details header should appear in 20 seconds, but it doesnt');
       expect(await movieDetailsHeader.getText()).toContain(movieName); 
   })
+
   it('should have raiting', async function () {
     let movieCardTitle = $$('movie-card').first().$('.text-ellipsis a');
     let movieRaiting = $('app-movie h2 > small');  
@@ -42,6 +43,7 @@ fdescribe('Movie details', async function () {
         console.log(await actors.count() + ' actors shows');     
     })
 })
+
   describe('reviews block', function () {
   beforeEach(async function () {
       let movieCardTitle = $$('movie-card').first().$('.text-ellipsis a');  
