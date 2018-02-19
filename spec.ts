@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 import { browser, element, By, $$, $, by, Key, ExpectedConditions as EC} from 'protractor';
-fdescribe('Movie details', async function () {
+describe('Movie details', async function () {
   beforeEach(async function () {
       await browser.get('/');    
   })
@@ -31,7 +30,7 @@ fdescribe('Movie details', async function () {
     expect(await similarMovies.count()).toBe,("there is no movies in simular movies block");
     console.log('there is ', await similarMovies.count(),' simular movies');
   })
-  
+})
   describe('cast block', async function () {
     beforeEach(async function () {
         let movieCardTitle = $$('movie-card').first().$('.text-ellipsis a');  
@@ -43,7 +42,7 @@ fdescribe('Movie details', async function () {
         expect(await actors.count()).toBe,('there is no actors in cast block');
         console.log(await actors.count() + ' actors shows');     
     })
-})
+  })
 
   describe('reviews block', function () {
   beforeEach(async function () {
@@ -65,7 +64,9 @@ fdescribe('Movie details', async function () {
         expect(sourceLink).not.toBe(THIS_SITE_LINK);
         console.log(sourceLink);
     })
+  })
 })
+
 describe('Popular series', async function () {
   beforeEach(async function () {
       await browser.manage().timeouts().implicitlyWait(1000);
@@ -151,7 +152,7 @@ describe('Search ', async function(){
     await browser.sleep(3000)
     expect(await firstMovieName.getText()).toBe(searchFilmName)
     })
-  })
+
     it('result should be empty, after request for nonexistent movie', async function(){
     let searchUnexistingFilm = '43fer4'
     let searchField = $$('[name="searchStr"]')
@@ -165,8 +166,7 @@ describe('Search ', async function(){
     console.log(await MoviesName.count())
     })
   })
-})
-=======
+
 import { browser, element, By, $$, $, by, Key} from 'protractor'
 
 describe('Protractor', function () {
@@ -175,7 +175,6 @@ describe('Protractor', function () {
     let a = $$('movie-card').$$('a')
     console.log(await a.getAttribute('title'))
     })
-  })   
 
   it('should have "raiting" pointer', async function (){
     await browser.get('/')
@@ -190,6 +189,7 @@ describe('Protractor', function () {
     await movieCardTitle.click(); 
 
     expect(await browser.getCurrentUrl()).toEqual(movieCardHref); 
+  })
   })
 
   //Navigation
@@ -211,12 +211,5 @@ describe('Protractor', function () {
     let actionButton = await $$('.nav-stacked > a').first().click()
     expect(browser.getCurrentUrl()).toBe('https://movies-finder.firebaseapp.com/genres/28/Action')
     })
-  
-  //Search
-  fdescribe('Search', async function() {
-    fit('by exisiting name, should show first movie with complete name match', async function(){
-      await browser.get('/')
-      
-    })
   })
->>>>>>> 36e5143a27101348017d132195f78e7e1d985603
+  
