@@ -93,7 +93,6 @@ describe('Popular series', async function () {
 })
 
 
-
 //Home work #3
 describe('Protractor', function () {
   it('should have name', async function (){
@@ -121,19 +120,19 @@ describe('Protractor', function () {
     it('should open "Upcoming movies" section', async function(){
     await browser.get('/')
     let upcomingMoviesButton = await $$('.navbar-nav > li > a').first().click()
-    expect(browser.getCurrentUrl()).toBe("https://movies-finder.firebaseapp.com/upcoming")
+    expect(await browser.getCurrentUrl()).toBe("https://movies-finder.firebaseapp.com/upcoming")
     })
 
     it('should open "Popular Series" section', async function(){
     await browser.get('/')
     let popularSeriesButton = await $$('.navbar-nav > li > a').first().click()
-    expect(browser.getCurrentUrl()).toBe("https://movies-finder.firebaseapp.com/popular/series")
+    expect(await browser.getCurrentUrl()).toBe("https://movies-finder.firebaseapp.com/popular/series")
     })
 
     it('should open "Action" section', async function(){
     await browser.get('/')
     let actionButton = await $$('.nav-stacked > a').first().click()
-    expect(browser.getCurrentUrl()).toBe('https://movies-finder.firebaseapp.com/genres/28/Action')
+    expect(await browser.getCurrentUrl()).toBe('https://movies-finder.firebaseapp.com/genres/28/Action')
   })
 })
   
@@ -167,7 +166,6 @@ describe('Search ', async function(){
     })
   })
 
-import { browser, element, By, $$, $, by, Key} from 'protractor'
 
 describe('Protractor', function () {
   it('should have name', async function (){
@@ -197,19 +195,18 @@ describe('Protractor', function () {
     it('should open "Upcoming movies" section', async function(){
     await browser.get('/')
     let upcomingMoviesButton = await $$('.navbar-nav > li > a').first().click()
-    expect(browser.getCurrentUrl()).toBe("https://movies-finder.firebaseapp.com/upcoming")
+    expect(await browser.getCurrentUrl()).toBe("https://movies-finder.firebaseapp.com/upcoming")
     })
 
     it('should open "Popular Series" section', async function(){
     await browser.get('/')
     let popularSeriesButton = await $$('.navbar-nav > li > a').first().click()
-    expect(browser.getCurrentUrl()).toBe("https://movies-finder.firebaseapp.com/popular/series")
+    expect(await browser.getCurrentUrl()).toBe("https://movies-finder.firebaseapp.com/popular/series")
     })
 
     it('should open "Action" section', async function(){
     await browser.get('/')
     let actionButton = await $$('.nav-stacked > a').first().click()
-    expect(browser.getCurrentUrl()).toBe('https://movies-finder.firebaseapp.com/genres/28/Action')
+    expect(await browser.getCurrentUrl()).toBe('https://movies-finder.firebaseapp.com/genres/28/Action')
     })
   })
-  
